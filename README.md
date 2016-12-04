@@ -6,6 +6,16 @@ This is a set of scripts to package dropbear from scratch into a DroboApp, i.e.,
 
 Check the [releases](https://github.com/droboports/unifi/releases) page. If there are no releases available, then you have to compile.
 
+## Inform Url
+
+because of how the ports default - your url for inform (Needed for Security Gateways) is:
+
+http://DROBO_IP:8883/inform
+
+The Url for the portal is:
+
+https://DROBO_IP:8043
+
 ## How to compile
 
 
