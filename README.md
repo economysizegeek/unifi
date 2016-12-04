@@ -20,11 +20,15 @@ https://DROBO_IP:8043
 
 The security gateway defaults to 192.168.1.1 . If that works for you - great. I use a different range.  It sounds like the proper way to do this is to set the network up in that range and then change it after adoption.
 
-I tried something a little bit different. I ssh into the gateway - ubnt/ubnt is the default credentials.  Then I modifed /etc/rc.local
+I tried something a little bit different. I ssh into the gateway - ubnt/ubnt is the default credentials.  
 
-  ifconfig eth0 192.168.10.1
-  
-Replace that ip with whatever ip you want it to have.  Then you can use the set-inform command to talk to your controller.  
+I added a virtual ip that is on the right network - but not the actual gateway address (I'm using the 192.168.10.x range with my controller at .245)- 
+
+ifconfig eth1:0 192.168.10.2
+set-inform http://192.168.10.245:8883/inform
+
+Once it gets adopted it resets and changes eth1 to the correct gateway address.
+
 
 ## How to compile
 
