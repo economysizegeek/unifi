@@ -16,6 +16,16 @@ The Url for the portal is:
 
 https://DROBO_IP:8043
 
+## What if I need a non-standard IP on my Security Gateway?
+
+The security gateway defaults to 192.168.1.1 . If that works for you - great. I use a different range.  It sounds like the proper way to do this is to set the network up in that range and then change it after adoption.
+
+I tried something a little bit different. I ssh into the gateway - ubnt/ubnt is the default credentials.  Then I modifed /etc/rc.local
+
+  ifconfig eth0 192.168.10.1
+  
+Replace that ip with whatever ip you want it to have.  Then you can use the set-inform command to talk to your controller.  
+
 ## How to compile
 
 
