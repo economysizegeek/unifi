@@ -6,6 +6,30 @@ This is a set of scripts to package dropbear from scratch into a DroboApp, i.e.,
 
 Check the [releases](https://github.com/droboports/unifi/releases) page. If there are no releases available, then you have to compile.
 
+## Inform Url
+
+because of how the ports default - your url for inform (Needed for Security Gateways) is:
+
+http://DROBO_IP:8883/inform
+
+The Url for the portal is:
+
+https://DROBO_IP:8043
+
+## What if I need a non-standard IP on my Security Gateway?
+
+The security gateway defaults to 192.168.1.1 . If that works for you - great. I use a different range.  It sounds like the proper way to do this is to set the network up in that range and then change it after adoption.
+
+I tried something a little bit different. I ssh into the gateway - ubnt/ubnt is the default credentials.  
+
+I added a virtual ip that is on the right network - but not the actual gateway address (I'm using the 192.168.10.x range with my controller at .245)- 
+
+ifconfig eth1:0 192.168.10.2
+set-inform http://192.168.10.245:8883/inform
+
+Once it gets adopted it resets and changes eth1 to the correct gateway address.
+
+
 ## How to compile
 
 
