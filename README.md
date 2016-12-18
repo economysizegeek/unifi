@@ -70,6 +70,10 @@ Each invocation creates a log file with all the generated output.
 * copy over the data directory
 * start the service
 
+## Upgrading firmware
+
+I've had problems getting it to upgrade via this web interace -so instead I ssh to the AP/Gateway and issue 
+* upgrade [url to firmware]
 
 ## Sources
 
