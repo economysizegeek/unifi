@@ -1,6 +1,6 @@
 ### UNIFI ###
 _build_unifi() {
-local VERSION="5.2.9"
+local VERSION="5.3.8"
 local FOLDER="UniFi"
 local FILE="${FOLDER}.unix.zip"
 local URL="http://www.ubnt.com/downloads/unifi/${VERSION}/${FILE}"
