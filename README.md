@@ -58,6 +58,19 @@ Each invocation creates a log file with all the generated output.
 * `./build.sh clean` removes everything but downloaded files.
 * `./build.sh package` repackages the DroboApp, without recompiling.
 
+
+## Upgrading
+
+* rebuild the new version
+* Stop the service on the drobo
+* backup the unifi/data directory
+* remove the old unif directory on the drobo
+* copy the unifi.tgz to the DroboApps directory adn reboot the drobo
+* Stop the service
+* copy over the data directory
+* start the service
+
+
 ## Sources
 
 * mongodb: http://facat.github.io/cross-compile-mongodb-for-arm.html
