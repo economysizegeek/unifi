@@ -41,14 +41,14 @@ Test using busybox:
 docker pull droboports/compiler
 mkdir -p ~/dist
 chmod a+rw dist
-docker run --rm --volume ~dist:/dist droboports/compiler build https://github.com/economysizegeek/busybox.git 
+docker run --rm --volume ~/dist:/dist droboports/compiler build https://github.com/economysizegeek/busybox.git 
 
 ```
 ```
 docker pull droboports/compiler
 mkdir -p ~/dist
 chmod a+rw dist
-docker run --rm --volume ~dist:/dist droboports/compiler build https://github.com/economysizegeek/unifi.git 
+docker run --rm --volume ~/dist:/dist droboports/compiler build https://github.com/economysizegeek/unifi.git 
 
 ```
 
