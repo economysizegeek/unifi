@@ -35,6 +35,7 @@ Once it gets adopted it resets and changes eth1 to the correct gateway address.
 
 This is going to follow the path of using Docker  - if you want to use a VM - First make sure that you have a [working cross-compiling VM](https://github.com/droboports/droboports.github.io/wiki/Setting-up-a-VM).
 
+### If you don't have make installed
 Test using busybox:
 
 ```
@@ -50,6 +51,21 @@ mkdir -p ~/dist
 chmod a+rw ~/dist
 docker run --rm --volume ~/dist:/dist droboports/compiler build https://github.com/economysizegeek/unifi.git 
 
+```
+
+###If you do have make (Which you should!)
+
+To test busybox
+
+```
+make fetch_docker
+make dist
+make busybox
+```
+
+To build unifi
+```
+make
 ```
 
 Each invocation creates a log file with all the generated output.
