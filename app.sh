@@ -32,5 +32,4 @@ _build() {
   _build_unifi
   _build_mongodb
   _package
-	cp ~/dist/unifi.tgz ~/dist/unifi.${UNIFI_VERSION}.tgz
 }
