@@ -1,11 +1,5 @@
-
-define build_unifi=
-endef
-
-define build_busybox =
-endef
+UNIFI_VERSION=$(shell grep UNIFI_VERSION= app.sh |sed 's/UNIFI_VERSION=//'|sed 's/"//g')
 .PHONY: clean build dist unifi busybox fetch_docker
-UNIFI_VERSION=`grep UNIFI_VERSION= app.sh |sed 's/UNIFI_VERSION=//'|sed 's/"//g'`
 
 build: announce fetch_docker dist unifi
 
