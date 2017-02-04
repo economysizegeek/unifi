@@ -1,6 +1,7 @@
 ### UNIFI ###
+UNIFI_VERSION="5.3.11"
 _build_unifi() {
-local VERSION="5.3.11"
+local VERSION=$UNIFI_VERSION
 local FOLDER="UniFi"
 local FILE="${FOLDER}.unix.zip"
 local URL="http://www.ubnt.com/downloads/unifi/${VERSION}/${FILE}"
@@ -31,5 +32,5 @@ _build() {
   _build_unifi
   _build_mongodb
   _package
-	cp ~/dist/unifi.tgz ~/dist/unifi.${VERSION}.tgz
+	cp ~/dist/unifi.tgz ~/dist/unifi.${UNIFI_VERSION}.tgz
 }
