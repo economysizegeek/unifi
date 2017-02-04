@@ -1,25 +1,29 @@
 
 define build_unifi=
-docker run --rm --volume ~/dist:/dist droboports/compiler \
-    build https://github.com/economysizegeek/unifi.git 
 endef
 
 define build_busybox =
-docker run --rm --volume ~/dist:/dist droboports/compiler \
-  build https://github.com/economysizegeek/busybox.git 
 endef
-define remove_tarballs =
-rm -f ~/dist/*.tgz
-endef
+.PHONY: clean build dist unifi busybox fetch_docker
 
-unifi: ; $(build_unifi)
+build: fetch_docker dist unifi
+
+fetch_docker: 
+				docker pull droboports/compiler
+
+dist: 
+				mkdir -p ~/dist 
+				chmod a+rw ~/dist
+
+unifi: 
+				rm -f ~/dist/unifi.tgz
+				docker run --rm --volume ~/dist:/dist droboports/compiler  build https://github.com/economysizegeek/unifi.git 
+
+busybox: 
+				rm -f ~/dist/busybox.tgz
+				docker run --rm --volume ~/dist:/dist droboports/compiler  build https://github.com/economysizegeek/busybox.git 
 
 
+clean: ~/dist
+				rm -f ~/dist/*.tgz
 
-
-busybox: ; $(build_buysbox)
-
-
-clean: ; $(remove_tarballs)
-
-.ONESHELL:
