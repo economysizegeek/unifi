@@ -24,6 +24,13 @@ busybox:
 				docker run --rm --volume ~/dist:/dist droboports/compiler  build https://github.com/economysizegeek/busybox.git 
 
 
-clean: ~/dist
+clean: 
+				./build.sh clean
+distclean: 
 				rm -f ~/dist/*.tgz
+				./build.sh distclean
+
+
+package:
+				./build.sh package
 
