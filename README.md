@@ -78,6 +78,25 @@ Each invocation creates a log file with all the generated output.
 
 ## Upgrading
 
+```
+ssh to your drobo
+cd /mnt/DroboFS/Shares/DroboApps/unifi
+sudo ./service.sh stop
+sudo tar -czvf data.(date).tar.gz data
+cp data.(date).tar.gz ~/
+cd ..
+sudo mv unifi ~/old_unifi_(date)
+cp ~/unifi.version.tgz .
+sudo reboot
+ssh to your drobo
+cd /mnt/DroboFS/Shares/DroboApps/unifi
+sudo ./service.sh stop
+sudo tar -xzf ~/data.(date).tar.gz
+sudo ./service.sh start
+```
+
+
+
 * rebuild the new version
 * Stop the service on the drobo
 * backup the unifi/data directory
