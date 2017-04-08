@@ -109,7 +109,8 @@ sudo ./service.sh start
 ## Upgrading firmware
 
 I've had problems getting it to upgrade via this web interace -so instead I ssh to the AP/Gateway and issue 
-* upgrade [url to firmware]
+
+It turns out that the issue was not related to this software. I was setting static ips on the aps without setting a preferred DNS server.  That was preventing them from handling the upgrade process. If you set that up they can be upgraded from the control panel
 
 ## Sources
 
