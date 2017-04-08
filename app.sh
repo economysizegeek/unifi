@@ -1,5 +1,5 @@
 ### UNIFI ###
-UNIFI_VERSION="5.3.11"
+UNIFI_VERSION="5.4.14"
 _build_unifi() {
 local VERSION=$UNIFI_VERSION
 local FOLDER="UniFi"
