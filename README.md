@@ -1,5 +1,6 @@
 # unifi
-# Currently builds version 5.6.19
+# Currently builds version 5.5.24
+# Verison 5.6.19 - Doesn't seem to work on drobo :(
 
 This is a set of scripts to package dropbear from scratch into a DroboApp, i.e., download sources, unpackage, compile, install, and package in a TGZ file. The `master` branch contains the Drobo5N version, the `drobofs` branch contains the DroboFS version.
 
